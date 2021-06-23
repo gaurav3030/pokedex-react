@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pokedex{
+    position: relative;
+    background-color: transparent;
+    width: 60vh;
+    height: 64vh;
+    overflow: hidden;
+    transition: all 0.3s ;
+}
+.upperdex{
+    position: relative;
+    z-index: 1;
+}
+.upperdex img{
+    position: relative;
+    top: 0;
+    height: 30vh;
+    width: 60vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.lowerdex{
+    position: absolute;
+    bottom: 0;
+    transform: rotateZ(180deg);
+}
+.lowerdex img{
+    position: relative;
+    top: 0;
+    height: 30vh;
+    width: 60vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.circle1{
+    position: absolute;
+    height: 14vh;
+    width: 14vh;
+    top: 0px;
+    left: 0px;
+    transform: translate(-30%,-30%) ;
+    background-color: transparent;
+    border-radius:50%;
+    border:  7px solid #00000080;
+}
+ .circle1::before{
+    content: '';
+    position: absolute;
+    height: 8vh;
+    width: 8vh;
+    
+    border-radius: 50%;
+    border:  7px solid #00000080;
+    background-color: transparent;
+} 
+
+.circle2{
+    position: absolute;
+    height: 14vh;
+    width: 14vh;
+    top: 0px;
+    right: 0px;
+    transform: translate(30%,-30%) ;
+    background-color: transparent;
+    border-radius: 50%;
+    border:  7px solid #00000080;
+    
 }
 
-.App-link {
-  color: #61dafb;
+.circle2::before{
+    content: '';
+    position: absolute;
+    height: 8vh;
+    width: 8vh;
+    right: 0px;
+    border-radius: 50%;
+    border:  7px solid #00000080;
+    background-color: transparent;
+} 
+
+.screen{
+    z-index: 0;
+    position: absolute;
+    width: 50vh;
+    background: -webkit-radial-gradient(at center, #4fdfffcc, #0083b0cc); /* Chrome 10-25, Safari 5.1-6 */
+    background: radial-gradient(at center, #4fdfffcc, #0083b0cc); 
+    height: 36vh;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%,-50%) ;
+    transition: height 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pokedexon{
+    height: 90vh;
+    transform: scale(2);
 }

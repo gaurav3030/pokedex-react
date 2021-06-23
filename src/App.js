@@ -1,23 +1,47 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react'
+import body from './misc/body.svg';
+import PokeScreen from './components/PokeScreen';
+
 
 function App() {
+
+    const [pokedex, setPokedex] = useState(0)
+    function toggleDex(){
+  
+        if(pokedex ===0){
+            setPokedex(1);
+
+        }else{
+            setPokedex(0);
+
+        }
+    }
+    let pokedexOffStyle = {
+        height: "64vh",
+        transform: "scale(1)"
+    }
+    let pokedexOnStyle = {
+        height: "90vh",
+        transform: "scale(2)"
+    }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='pokedex'  style = {pokedex===0?pokedexOffStyle:pokedexOnStyle}>
+        <div className="upperdex" >
+            <img src={body} alt=""></img>
+                
+            <div className="circle1"></div>
+            <div className="circle2"></div>
+        </div>
+
+        <PokeScreen toggleDex={toggleDex} pokedex={pokedex}/>
+
+        <div className="lowerdex">
+            <img src={body} alt=""/>
+
+            <div className="circle1 bot"></div>
+            <div className="circle2 bot"></div>
+        </div>
     </div>
   );
 }
