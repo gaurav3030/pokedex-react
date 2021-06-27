@@ -5,6 +5,17 @@ body{
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
+    overflow: hidden;
+
+}
+.bgimg{
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url('./misc/mainbg.png');
+    filter: blur(4px);
 }
 
 .pokedex{
@@ -101,7 +112,158 @@ body{
     
 }
 
-.pokedexon{
-    height: 90vh;
-    transform: scale(2);
+
+
+.pokecontent{
+    position: absolute;
+    height: 30vh;
+    width: 90%;
+    background-color: transparent;
+    display: none;
+    justify-content: center;
+}
+
+.topcontent{
+    height: 20vh;
+    font-size: 0;
+    width: 100%;
+    background-color: transparent;
+    position: relative;
+
+}
+.pokephoto{
+    display: inline-block;
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    background-color: transparent;
+}
+.pokedetails{
+    display: inline-block;
+    height: 90%;
+    top: 10%;
+    position: absolute;
+    width: 55%;
+    right: 0;
+    background-color: transparent;
+    
+}
+.pokeinfo{
+    position: absolute;
+    width: 50vh;
+    height: 11vh;
+    bottom: 0;
+    background-color: transparent;
+}
+
+.pokephoto img{
+    position: relative;
+    width: 90%;
+    margin: 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.pokerow{
+    margin-bottom:5px ;
+    width: 100%;
+    background: transparent;
+    height: 15%;
+    position: relative;
+
+}
+.pokerow::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: translateY(100%);
+    background-color: transparent;
+    bottom: 0;
+    border-top: 0.4vh rgb(245, 245, 245) solid ;
+    border-top-left-radius: 13px;
+
+}
+.pokerow span{
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    display: inline-block;
+    color: white;
+    font-size: 1.7vh;
+    margin: 0px;
+}
+.pokerow .name{
+    left: 50%;
+}
+.pokerow .no{
+    left: 10%;
+}
+.pokerow .altname,.pokerow .type,.pokerow .entity{
+    left: 5%;
+    color: black;
+    
+}
+.pokerow .val{
+    right: 10px;
+    color: black;
+}
+.type1{
+    position: absolute;
+    height: 80%;
+    width: 25%;
+
+    font-size: 1.2vh;
+    color: white;
+    left: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto 0;
+    vertical-align: middle;
+    text-shadow: 0px 0px 3px 3px #00000080;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 1px 1px #fff ;
+}
+.type2{
+    position: absolute;
+    height: 80%;
+    width: 25%;
+
+    font-size: 1.2vh;
+    color: white;
+    left: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto 0;
+    vertical-align: middle;
+    text-shadow: 0px 0px 3px 3px #00000080;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 1px 1px #fff ;
+    
+}
+.pokeinfo p{
+    position: absolute;
+    z-index: 1;
+    padding: 10px 15px;
+    font-size: 1.2vh;
+}
+.infoleft{
+    position: absolute;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(180deg, rgb(240, 240, 240) 30%, rgb(180, 180, 180)); 
+    border-radius: 0px 20px 0 0 ;
+}
+.inforight{
+    position: absolute;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(180deg, rgb(240, 240, 240) 30%, rgb(180, 180, 180)); 
+    left: 45%;
+    border-radius: 20px 0 0 0 ;
 }
